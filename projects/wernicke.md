@@ -1,6 +1,6 @@
 ---
 title: "Wernicke"
-summary: "Flexible parsing framework for Common Lisp"
+subtitle: "Common Lisp"
 ---
 
 Wernicke is a framework made to ease development of parsing languages, such as regular expressions and Instaparse,

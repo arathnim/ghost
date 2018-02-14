@@ -33,12 +33,6 @@ class Header extends React.Component {
               </div>
             </Link>
 
-            <Link to="/essays">
-              <div className={styles.navcontainer}>
-                <span className={this.props.active.startsWith("#/essays") ? styles.navactive :  styles.navitem}>Essays</span>
-              </div>
-            </Link>
-
             <Link to="/projects">
               <div className={styles.navcontainer}>
                 <span className={this.props.active.startsWith("#/projects") ? styles.navactive :  styles.navitem}>Projects</span>

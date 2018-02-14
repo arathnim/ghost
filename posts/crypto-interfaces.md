@@ -5,7 +5,7 @@ date: "November 5th, 2017"
 
 The first rule of computer security is that all security mechanisms are broken and awful,
 and cryptography libraries are no exception to this rule.
-The specific way and degree to which they are awful and broken varies between libraries,
+The specific way and degree to which they are broken and awful varies between libraries,
 but the overarching theme is simple: they're hard to use correctly.
 Misconfiguring the crypto library can break it in such a way your data can be accessed by an attacker;
 and unlike exploits, fixing the problem can be impossible, as you might not have the key to reencrypt the data with.
@@ -56,7 +56,7 @@ Fortunately, these problems are not insurmountable, they just require better too
 
 How I usually start is by identifying the highest-level abstractions that people might use, and working my way down to the implementation.
 Modeling how people think about the domain you're writing code for is critical to creating better interfaces:
-code which matches how the developer thinks about the subject will be the easiest to work with.
+code which matches how the application developer thinks about the subject will be the easiest for them to work with.
 
 #### the vault abstraction
 
@@ -80,13 +80,16 @@ Algorithm isn't just a choice for the user to make,
 as in the previous level, it's a slot that takes objects with the encrypt and decrypt methods, which fully describes a particular
 algorithm.
 
-They next step is identifying the goals we want to use to guide our design.
+Now that we have an understanding of how different developers think about cryptography,
+we can use that information to figure out how to design the interface.
+The next step is identifying the goals we want to use to guide that design,
+specifically, the ways in which it will be accessed.
 
 #### ease of use
 
-The first is that we want to make it so that developers without crypto knowledge can use the library to get what they need.
+The first is that we want to make it so that developers without crypto knowledge can use the library.
 The difficulty with this goal is that they're using the first level of abstraction, cryptography as a vault,
-which is a pretty bare-bones model.
+which is a bare-bones model.
 If forced to make critical choices like CTR vs. CBC, they're probably going to choose at random.
 So, it follows they need an interface which mirrors this level of abstraction.
 
@@ -143,7 +146,7 @@ and the user can create new objects to pass to it.
 As I said before, this isn't the only abstraction that works, nor even the only way to improve the interface.
 There's a couple of other areas in which crypto libraries are typically lacking.
 
-#### warnings and errors
+> Change the attitude toward errors. Think of an object's user as attempting to do a task, getting there by imperfect approximations. Don't think of the user as making errors; think of the actions as approximations of what is desired. 
 
 Warnings and errors are a large part of how the compiler communicates with us,
 the better they are, the more the programmer knows about the problem, and the faster they can fix it.
@@ -152,11 +155,8 @@ but more complex error cases, like the key being reused as the nonce, are rarely
 The compiler could also provide warnings on a number of potentially insecure encryption settings,
 such as using weak hashing algorithms, having too small a keysize, and using known vulnerable algorithms.
 
-#### documentation
-
 Crypto libraries often support multiple algorithms, several outdated and broken, for backward compatability purposes.
 This is a good idea, except the documentation has these side-by-side, without any indication that some are
 much more vulnerable than others, which makes it much more likely the user will accidentally pick a vulnerable one.
 Some libraries documentation will even have insecure example code.
-
-insert conclusion here
+We can do better by outlining

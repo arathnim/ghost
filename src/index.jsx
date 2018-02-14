@@ -13,6 +13,7 @@ import history from './history'
 
 import Header from './containers/Header'
 import Blog from './containers/Blog'
+import Projects from './containers/Projects'
 import Post from './containers/Post'
 import Essay from './containers/Essay'
 
@@ -34,6 +35,8 @@ class Init extends React.Component {
             <Route exact path="/blog" component={Blog} />
 
             <Route exact path="/blog/:path" component={Post} />
+
+            <Route exact path="/projects" component={Projects}/>
 
             <Route exact path="/essays" component={Essay}/>
 

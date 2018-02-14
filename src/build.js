@@ -65,20 +65,14 @@ var metadata2 = content2.map(
   ({
     "path": path,
     "title": o.data.title,
-    "summary": o.data.summary,
+    "subtitle": o.data.subtitle,
+    "preview": ($(o.content).first('p').html()),
   })
 );
 
 fs.writeFileSync('./public/project-meta.json', JSON.stringify(metadata2));
 
 console.log("Project metadata written");
-
-// resume
-
-var resume = handlePost(fs.readFileSync('./resume.md', 'utf8'))
-fs.writeFileSync('./public/resume.json', JSON.stringify(resume))
-
-console.log("Resume markdown written");
 
 // about
 
