@@ -19,7 +19,7 @@ class ProjectTeaser extends React.Component {
 
         <div className={styles.postteaser}>
 
-          <div style={{ display: 'flex', marginTop: '10px', marginBottom: '30px'}}>
+          <div style={{ display: 'flex', marginTop: '10px', marginBottom: '10px'}}>
 
             <div style={{ width: '200px', minWidth: '200px', marginRight: '70px', marginTop: '18px', textAlign: 'left'}}>
                 <Link to={"/projects/"+this.props.post.path}>
@@ -30,9 +30,6 @@ class ProjectTeaser extends React.Component {
 
             <div>
               <p style={{ fontSize: '18px', fontWeight: 400 }} dangerouslySetInnerHTML={{ __html: this.props.post.preview }} />
-              <Link to={"/projects/"+this.props.post.path}>
-                <div style={{ fontSize: '1em' }} className={styles.posttitle}>Read More...</div>
-              </Link>
             </div>
 
           </div>

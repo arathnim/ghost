@@ -16,6 +16,7 @@ regex-like parsing language in Wernicke.
 
 #### Installation
 
-```
-(ql:quickload 'wernicke)
-```
+Wernicke requires quicklisp to run. It's been tested on sbcl, but should work on other CL implementations.
+to install quicklisp, go to [quicklisp's website](https://www.quicklisp.org/beta/) and follow the instructions there.
+
+To use wernicke, clone the repo into `~/quicklisp/local-projects`, and run `(ql:quickload 'wernicke)` inside your lisp interpreter.

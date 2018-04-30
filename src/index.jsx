@@ -18,6 +18,7 @@ import Project from './containers/Project'
 import Post from './containers/Post'
 import Essay from './containers/Essay'
 import About from './containers/About'
+import Resume from './containers/Resume'
 
 class Init extends React.Component {
   constructor(props) {
@@ -45,6 +46,8 @@ class Init extends React.Component {
             <Route exact path="/essays" component={Essay}/>
 
             <Route exact path="/about" component={About}/>
+
+            <Route exact path="/resume" component={Resume}/>
 
             <Redirect exact from="/" to="/blog" />
 

@@ -29,7 +29,7 @@ class PostTeaser extends React.Component {
             </div>
 
             <div>
-              <p style={{ fontSize: '18px', fontWeight: 400 }} dangerouslySetInnerHTML={{ __html: this.props.post.preview }} />
+              <div style={{ fontSize: '18px', fontWeight: 400 }} dangerouslySetInnerHTML={{ __html: this.props.post.preview }} />
               <Link to={"/blog/"+this.props.post.path}>
                 <div style={{ fontSize: '1em' }} className={styles.posttitle}>Read More...</div>
               </Link>

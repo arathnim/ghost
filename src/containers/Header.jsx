@@ -39,17 +39,16 @@ class Header extends React.Component {
               </div>
             </Link>
 
-            <Link to="/about">
+            <Link to="/resume">
               <div className={styles.navcontainer}>
-                <span className={this.props.active.startsWith("#/about") ? styles.navactive :  styles.navitem}>About</span>
+                <span className={this.props.active.startsWith("#/resume") ? styles.navactive :  styles.navitem}>Resume</span>
               </div>
             </Link>
 
           </div>
 
           <div>
-            <i className="fab fa-github"></i>
-            <i className="fab fa-twitter"></i>
+            
           </div>
 
         </div>

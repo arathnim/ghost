@@ -3,6 +3,26 @@ title: "Cryptographic Interfaces"
 date: "November 5th, 2017"
 ---
 
+Notes:
+  Give a moral slant to the whole thing?
+    mix of hope for a better world and anger
+  "If we're going to make crypto widespread, it has to be easy to use"
+    fast development loop
+    encourages novel use of cryptography
+  abstractions are two lenses, use and understanding
+  documentation issues
+  framework-level solutions
+  more concrete examples
+
+Cryptopgraphy is the cornerstone of information security:
+it confirms the identity of users, protects the integrity of data,
+keeps passwords safe and conversations private.
+It's also mathematically and computationally complex,
+which requires considerable use of abstraction to make it avaliable to library and application developers.
+
+If our user's data is going to be secure, good security practices need to be widespread and consistent,
+and good cryptography needs to be avaliable and accessable to developers
+
 The first rule of computer security is that all security mechanisms are broken and awful,
 and cryptography libraries are no exception to this rule.
 The specific way and degree to which they are broken and awful varies between libraries,

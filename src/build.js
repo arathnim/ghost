@@ -36,7 +36,7 @@ var metadata = content.map(
     "path": path,
     "title": o.data.title,
     "date": o.data.date,
-    "preview": ($(o.content).first('p').html() + "</p><p>" + $(o.content).first('p').next().html()),
+    "preview": ("<p>" + $(o.content).first('p').html() + "</p>" + "<p>" + $(o.content).first('p').next().html() + "</p>" + "<p>" + $(o.content).first('p').next().next().html() + "</p>"),
   })
 );
 
@@ -79,4 +79,11 @@ console.log("Project metadata written");
 var about = handlePost(fs.readFileSync('./about.md', 'utf8'))
 fs.writeFileSync('./public/about.json', JSON.stringify(about))
 
-console.log("About metadata written");
+console.log("About written");
+
+// resume
+
+var resume = handlePost(fs.readFileSync('./resume.md', 'utf8'))
+fs.writeFileSync('./public/resume.json', JSON.stringify(resume))
+
+console.log("Resume written");
